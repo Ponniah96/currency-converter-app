@@ -1,0 +1,968 @@
+[
+ {
+  "Label": "AED - United Arab Emirates",
+  "Currency Code": "AED",
+  "Country": "United Arab Emirates",
+  "Currency Name": "UAE Dirham"
+ },
+ {
+  "Label": "AFN - Afghanistan",
+  "Currency Code": "AFN",
+  "Country": "Afghanistan",
+  "Currency Name": "Afghan Afghani"
+ },
+ {
+  "Label": "ALL - Albania",
+  "Currency Code": "ALL",
+  "Country": "Albania",
+  "Currency Name": "Albanian Lek"
+ },
+ {
+  "Label": "AMD - Armenia",
+  "Currency Code": "AMD",
+  "Country": "Armenia",
+  "Currency Name": "Armenian Dram"
+ },
+ {
+  "Label": "ANG - Netherlands Antilles",
+  "Currency Code": "ANG",
+  "Country": "Netherlands Antilles",
+  "Currency Name": "Netherlands Antillian Guilder"
+ },
+ {
+  "Label": "AOA - Angola",
+  "Currency Code": "AOA",
+  "Country": "Angola",
+  "Currency Name": "Angolan Kwanza"
+ },
+ {
+  "Label": "ARS - Argentina",
+  "Currency Code": "ARS",
+  "Country": "Argentina",
+  "Currency Name": "Argentine Peso"
+ },
+ {
+  "Label": "AUD - Australia",
+  "Currency Code": "AUD",
+  "Country": "Australia",
+  "Currency Name": "Australian Dollar"
+ },
+ {
+  "Label": "AWG - Aruba",
+  "Currency Code": "AWG",
+  "Country": "Aruba",
+  "Currency Name": "Aruban Florin"
+ },
+ {
+  "Label": "AZN - Azerbaijan",
+  "Currency Code": "AZN",
+  "Country": "Azerbaijan",
+  "Currency Name": "Azerbaijani Manat"
+ },
+ {
+  "Label": "BAM - Bosnia and Herzegovina",
+  "Currency Code": "BAM",
+  "Country": "Bosnia and Herzegovina",
+  "Currency Name": "Bosnia and Herzegovina Mark"
+ },
+ {
+  "Label": "BBD - Barbados",
+  "Currency Code": "BBD",
+  "Country": "Barbados",
+  "Currency Name": "Barbados Dollar"
+ },
+ {
+  "Label": "BDT - Bangladesh",
+  "Currency Code": "BDT",
+  "Country": "Bangladesh",
+  "Currency Name": "Bangladeshi Taka"
+ },
+ {
+  "Label": "BGN - Bulgaria",
+  "Currency Code": "BGN",
+  "Country": "Bulgaria",
+  "Currency Name": "Bulgarian Lev"
+ },
+ {
+  "Label": "BHD - Bahrain",
+  "Currency Code": "BHD",
+  "Country": "Bahrain",
+  "Currency Name": "Bahraini Dinar"
+ },
+ {
+  "Label": "BIF - Burundi",
+  "Currency Code": "BIF",
+  "Country": "Burundi",
+  "Currency Name": "Burundian Franc"
+ },
+ {
+  "Label": "BMD - Bermuda",
+  "Currency Code": "BMD",
+  "Country": "Bermuda",
+  "Currency Name": "Bermudian Dollar"
+ },
+ {
+  "Label": "BND - Brunei",
+  "Currency Code": "BND",
+  "Country": "Brunei",
+  "Currency Name": "Brunei Dollar"
+ },
+ {
+  "Label": "BOB - Bolivia",
+  "Currency Code": "BOB",
+  "Country": "Bolivia",
+  "Currency Name": "Bolivian Boliviano"
+ },
+ {
+  "Label": "BRL - Brazil",
+  "Currency Code": "BRL",
+  "Country": "Brazil",
+  "Currency Name": "Brazilian Real"
+ },
+ {
+  "Label": "BSD - Bahamas",
+  "Currency Code": "BSD",
+  "Country": "Bahamas",
+  "Currency Name": "Bahamian Dollar"
+ },
+ {
+  "Label": "BTN - Bhutan",
+  "Currency Code": "BTN",
+  "Country": "Bhutan",
+  "Currency Name": "Bhutanese Ngultrum"
+ },
+ {
+  "Label": "BWP - Botswana",
+  "Currency Code": "BWP",
+  "Country": "Botswana",
+  "Currency Name": "Botswana Pula"
+ },
+ {
+  "Label": "BYN - Belarus",
+  "Currency Code": "BYN",
+  "Country": "Belarus",
+  "Currency Name": "Belarusian Ruble"
+ },
+ {
+  "Label": "BZD - Belize",
+  "Currency Code": "BZD",
+  "Country": "Belize",
+  "Currency Name": "Belize Dollar"
+ },
+ {
+  "Label": "CAD - Canada",
+  "Currency Code": "CAD",
+  "Country": "Canada",
+  "Currency Name": "Canadian Dollar"
+ },
+ {
+  "Label": "CDF - Democratic Republic of the Congo",
+  "Currency Code": "CDF",
+  "Country": "Democratic Republic of the Congo",
+  "Currency Name": "Congolese Franc"
+ },
+ {
+  "Label": "CHF - Switzerland",
+  "Currency Code": "CHF",
+  "Country": "Switzerland",
+  "Currency Name": "Swiss Franc"
+ },
+ {
+  "Label": "CLP - Chile",
+  "Currency Code": "CLP",
+  "Country": "Chile",
+  "Currency Name": "Chilean Peso"
+ },
+ {
+  "Label": "CNY - China",
+  "Currency Code": "CNY",
+  "Country": "China",
+  "Currency Name": "Chinese Renminbi"
+ },
+ {
+  "Label": "COP - Colombia",
+  "Currency Code": "COP",
+  "Country": "Colombia",
+  "Currency Name": "Colombian Peso"
+ },
+ {
+  "Label": "CRC - Costa Rica",
+  "Currency Code": "CRC",
+  "Country": "Costa Rica",
+  "Currency Name": "Costa Rican Colon"
+ },
+ {
+  "Label": "CUP - Cuba",
+  "Currency Code": "CUP",
+  "Country": "Cuba",
+  "Currency Name": "Cuban Peso"
+ },
+ {
+  "Label": "CVE - Cape Verde",
+  "Currency Code": "CVE",
+  "Country": "Cape Verde",
+  "Currency Name": "Cape Verdean Escudo"
+ },
+ {
+  "Label": "CZK - Czech Republic",
+  "Currency Code": "CZK",
+  "Country": "Czech Republic",
+  "Currency Name": "Czech Koruna"
+ },
+ {
+  "Label": "DJF - Djibouti",
+  "Currency Code": "DJF",
+  "Country": "Djibouti",
+  "Currency Name": "Djiboutian Franc"
+ },
+ {
+  "Label": "DKK - Denmark",
+  "Currency Code": "DKK",
+  "Country": "Denmark",
+  "Currency Name": "Danish Krone"
+ },
+ {
+  "Label": "DOP - Dominican Republic",
+  "Currency Code": "DOP",
+  "Country": "Dominican Republic",
+  "Currency Name": "Dominican Peso"
+ },
+ {
+  "Label": "DZD - Algeria",
+  "Currency Code": "DZD",
+  "Country": "Algeria",
+  "Currency Name": "Algerian Dinar"
+ },
+ {
+  "Label": "EGP - Egypt",
+  "Currency Code": "EGP",
+  "Country": "Egypt",
+  "Currency Name": "Egyptian Pound"
+ },
+ {
+  "Label": "ERN - Eritrea",
+  "Currency Code": "ERN",
+  "Country": "Eritrea",
+  "Currency Name": "Eritrean Nakfa"
+ },
+ {
+  "Label": "ETB - Ethiopia",
+  "Currency Code": "ETB",
+  "Country": "Ethiopia",
+  "Currency Name": "Ethiopian Birr"
+ },
+ {
+  "Label": "EUR - European Union",
+  "Currency Code": "EUR",
+  "Country": "European Union",
+  "Currency Name": "Euro"
+ },
+ {
+  "Label": "FJD - Fiji",
+  "Currency Code": "FJD",
+  "Country": "Fiji",
+  "Currency Name": "Fiji Dollar"
+ },
+ {
+  "Label": "FKP - Falkland Islands",
+  "Currency Code": "FKP",
+  "Country": "Falkland Islands",
+  "Currency Name": "Falkland Islands Pound"
+ },
+ {
+  "Label": "FOK - Faroe Islands",
+  "Currency Code": "FOK",
+  "Country": "Faroe Islands",
+  "Currency Name": "Faroese Króna"
+ },
+ {
+  "Label": "GBP - United Kingdom",
+  "Currency Code": "GBP",
+  "Country": "United Kingdom",
+  "Currency Name": "Pound Sterling"
+ },
+ {
+  "Label": "GEL - Georgia",
+  "Currency Code": "GEL",
+  "Country": "Georgia",
+  "Currency Name": "Georgian Lari"
+ },
+ {
+  "Label": "GGP - Guernsey",
+  "Currency Code": "GGP",
+  "Country": "Guernsey",
+  "Currency Name": "Guernsey Pound"
+ },
+ {
+  "Label": "GHS - Ghana",
+  "Currency Code": "GHS",
+  "Country": "Ghana",
+  "Currency Name": "Ghanaian Cedi"
+ },
+ {
+  "Label": "GIP - Gibraltar",
+  "Currency Code": "GIP",
+  "Country": "Gibraltar",
+  "Currency Name": "Gibraltar Pound"
+ },
+ {
+  "Label": "GMD - The Gambia",
+  "Currency Code": "GMD",
+  "Country": "The Gambia",
+  "Currency Name": "Gambian Dalasi"
+ },
+ {
+  "Label": "GNF - Guinea",
+  "Currency Code": "GNF",
+  "Country": "Guinea",
+  "Currency Name": "Guinean Franc"
+ },
+ {
+  "Label": "GTQ - Guatemala",
+  "Currency Code": "GTQ",
+  "Country": "Guatemala",
+  "Currency Name": "Guatemalan Quetzal"
+ },
+ {
+  "Label": "GYD - Guyana",
+  "Currency Code": "GYD",
+  "Country": "Guyana",
+  "Currency Name": "Guyanese Dollar"
+ },
+ {
+  "Label": "HKD - Hong Kong",
+  "Currency Code": "HKD",
+  "Country": "Hong Kong",
+  "Currency Name": "Hong Kong Dollar"
+ },
+ {
+  "Label": "HNL - Honduras",
+  "Currency Code": "HNL",
+  "Country": "Honduras",
+  "Currency Name": "Honduran Lempira"
+ },
+ {
+  "Label": "HRK - Croatia",
+  "Currency Code": "HRK",
+  "Country": "Croatia",
+  "Currency Name": "Croatian Kuna"
+ },
+ {
+  "Label": "HTG - Haiti",
+  "Currency Code": "HTG",
+  "Country": "Haiti",
+  "Currency Name": "Haitian Gourde"
+ },
+ {
+  "Label": "HUF - Hungary",
+  "Currency Code": "HUF",
+  "Country": "Hungary",
+  "Currency Name": "Hungarian Forint"
+ },
+ {
+  "Label": "IDR - Indonesia",
+  "Currency Code": "IDR",
+  "Country": "Indonesia",
+  "Currency Name": "Indonesian Rupiah"
+ },
+ {
+  "Label": "ILS - Israel",
+  "Currency Code": "ILS",
+  "Country": "Israel",
+  "Currency Name": "Israeli New Shekel"
+ },
+ {
+  "Label": "IMP - Isle of Man",
+  "Currency Code": "IMP",
+  "Country": "Isle of Man",
+  "Currency Name": "Manx Pound"
+ },
+ {
+  "Label": "INR - India",
+  "Currency Code": "INR",
+  "Country": "India",
+  "Currency Name": "Indian Rupee"
+ },
+ {
+  "Label": "IQD - Iraq",
+  "Currency Code": "IQD",
+  "Country": "Iraq",
+  "Currency Name": "Iraqi Dinar"
+ },
+ {
+  "Label": "IRR - Iran",
+  "Currency Code": "IRR",
+  "Country": "Iran",
+  "Currency Name": "Iranian Rial"
+ },
+ {
+  "Label": "ISK - Iceland",
+  "Currency Code": "ISK",
+  "Country": "Iceland",
+  "Currency Name": "Icelandic Króna"
+ },
+ {
+  "Label": "JEP - Jersey",
+  "Currency Code": "JEP",
+  "Country": "Jersey",
+  "Currency Name": "Jersey Pound"
+ },
+ {
+  "Label": "JMD - Jamaica",
+  "Currency Code": "JMD",
+  "Country": "Jamaica",
+  "Currency Name": "Jamaican Dollar"
+ },
+ {
+  "Label": "JOD - Jordan",
+  "Currency Code": "JOD",
+  "Country": "Jordan",
+  "Currency Name": "Jordanian Dinar"
+ },
+ {
+  "Label": "JPY - Japan",
+  "Currency Code": "JPY",
+  "Country": "Japan",
+  "Currency Name": "Japanese Yen"
+ },
+ {
+  "Label": "KES - Kenya",
+  "Currency Code": "KES",
+  "Country": "Kenya",
+  "Currency Name": "Kenyan Shilling"
+ },
+ {
+  "Label": "KGS - Kyrgyzstan",
+  "Currency Code": "KGS",
+  "Country": "Kyrgyzstan",
+  "Currency Name": "Kyrgyzstani Som"
+ },
+ {
+  "Label": "KHR - Cambodia",
+  "Currency Code": "KHR",
+  "Country": "Cambodia",
+  "Currency Name": "Cambodian Riel"
+ },
+ {
+  "Label": "KID - Kiribati",
+  "Currency Code": "KID",
+  "Country": "Kiribati",
+  "Currency Name": "Kiribati Dollar"
+ },
+ {
+  "Label": "KMF - Comoros",
+  "Currency Code": "KMF",
+  "Country": "Comoros",
+  "Currency Name": "Comorian Franc"
+ },
+ {
+  "Label": "KRW - South Korea",
+  "Currency Code": "KRW",
+  "Country": "South Korea",
+  "Currency Name": "South Korean Won"
+ },
+ {
+  "Label": "KWD - Kuwait",
+  "Currency Code": "KWD",
+  "Country": "Kuwait",
+  "Currency Name": "Kuwaiti Dinar"
+ },
+ {
+  "Label": "KYD - Cayman Islands",
+  "Currency Code": "KYD",
+  "Country": "Cayman Islands",
+  "Currency Name": "Cayman Islands Dollar"
+ },
+ {
+  "Label": "KZT - Kazakhstan",
+  "Currency Code": "KZT",
+  "Country": "Kazakhstan",
+  "Currency Name": "Kazakhstani Tenge"
+ },
+ {
+  "Label": "LAK - Laos",
+  "Currency Code": "LAK",
+  "Country": "Laos",
+  "Currency Name": "Lao Kip"
+ },
+ {
+  "Label": "LBP - Lebanon",
+  "Currency Code": "LBP",
+  "Country": "Lebanon",
+  "Currency Name": "Lebanese Pound"
+ },
+ {
+  "Label": "LKR - Sri Lanka",
+  "Currency Code": "LKR",
+  "Country": "Sri Lanka",
+  "Currency Name": "Sri Lanka Rupee"
+ },
+ {
+  "Label": "LRD - Liberia",
+  "Currency Code": "LRD",
+  "Country": "Liberia",
+  "Currency Name": "Liberian Dollar"
+ },
+ {
+  "Label": "LSL - Lesotho",
+  "Currency Code": "LSL",
+  "Country": "Lesotho",
+  "Currency Name": "Lesotho Loti"
+ },
+ {
+  "Label": "LYD - Libya",
+  "Currency Code": "LYD",
+  "Country": "Libya",
+  "Currency Name": "Libyan Dinar"
+ },
+ {
+  "Label": "MAD - Morocco",
+  "Currency Code": "MAD",
+  "Country": "Morocco",
+  "Currency Name": "Moroccan Dirham"
+ },
+ {
+  "Label": "MDL - Moldova",
+  "Currency Code": "MDL",
+  "Country": "Moldova",
+  "Currency Name": "Moldovan Leu"
+ },
+ {
+  "Label": "MGA - Madagascar",
+  "Currency Code": "MGA",
+  "Country": "Madagascar",
+  "Currency Name": "Malagasy Ariary"
+ },
+ {
+  "Label": "MKD - North Macedonia",
+  "Currency Code": "MKD",
+  "Country": "North Macedonia",
+  "Currency Name": "Macedonian Denar"
+ },
+ {
+  "Label": "MMK - Myanmar",
+  "Currency Code": "MMK",
+  "Country": "Myanmar",
+  "Currency Name": "Burmese Kyat"
+ },
+ {
+  "Label": "MNT - Mongolia",
+  "Currency Code": "MNT",
+  "Country": "Mongolia",
+  "Currency Name": "Mongolian Tögrög"
+ },
+ {
+  "Label": "MOP - Macau",
+  "Currency Code": "MOP",
+  "Country": "Macau",
+  "Currency Name": "Macanese Pataca"
+ },
+ {
+  "Label": "MRU - Mauritania",
+  "Currency Code": "MRU",
+  "Country": "Mauritania",
+  "Currency Name": "Mauritanian Ouguiya"
+ },
+ {
+  "Label": "MUR - Mauritius",
+  "Currency Code": "MUR",
+  "Country": "Mauritius",
+  "Currency Name": "Mauritian Rupee"
+ },
+ {
+  "Label": "MVR - Maldives",
+  "Currency Code": "MVR",
+  "Country": "Maldives",
+  "Currency Name": "Maldivian Rufiyaa"
+ },
+ {
+  "Label": "MWK - Malawi",
+  "Currency Code": "MWK",
+  "Country": "Malawi",
+  "Currency Name": "Malawian Kwacha"
+ },
+ {
+  "Label": "MXN - Mexico",
+  "Currency Code": "MXN",
+  "Country": "Mexico",
+  "Currency Name": "Mexican Peso"
+ },
+ {
+  "Label": "MYR - Malaysia",
+  "Currency Code": "MYR",
+  "Country": "Malaysia",
+  "Currency Name": "Malaysian Ringgit"
+ },
+ {
+  "Label": "MZN - Mozambique",
+  "Currency Code": "MZN",
+  "Country": "Mozambique",
+  "Currency Name": "Mozambican Metical"
+ },
+ {
+  "Label": "NAD - Namibia",
+  "Currency Code": "NAD",
+  "Country": "Namibia",
+  "Currency Name": "Namibian Dollar"
+ },
+ {
+  "Label": "NGN - Nigeria",
+  "Currency Code": "NGN",
+  "Country": "Nigeria",
+  "Currency Name": "Nigerian Naira"
+ },
+ {
+  "Label": "NIO - Nicaragua",
+  "Currency Code": "NIO",
+  "Country": "Nicaragua",
+  "Currency Name": "Nicaraguan Córdoba"
+ },
+ {
+  "Label": "NOK - Norway",
+  "Currency Code": "NOK",
+  "Country": "Norway",
+  "Currency Name": "Norwegian Krone"
+ },
+ {
+  "Label": "NPR - Nepal",
+  "Currency Code": "NPR",
+  "Country": "Nepal",
+  "Currency Name": "Nepalese Rupee"
+ },
+ {
+  "Label": "NZD - New Zealand",
+  "Currency Code": "NZD",
+  "Country": "New Zealand",
+  "Currency Name": "New Zealand Dollar"
+ },
+ {
+  "Label": "OMR - Oman",
+  "Currency Code": "OMR",
+  "Country": "Oman",
+  "Currency Name": "Omani Rial"
+ },
+ {
+  "Label": "PAB - Panama",
+  "Currency Code": "PAB",
+  "Country": "Panama",
+  "Currency Name": "Panamanian Balboa"
+ },
+ {
+  "Label": "PEN - Peru",
+  "Currency Code": "PEN",
+  "Country": "Peru",
+  "Currency Name": "Peruvian Sol"
+ },
+ {
+  "Label": "PGK - Papua New Guinea",
+  "Currency Code": "PGK",
+  "Country": "Papua New Guinea",
+  "Currency Name": "Papua New Guinean Kina"
+ },
+ {
+  "Label": "PHP - Philippines",
+  "Currency Code": "PHP",
+  "Country": "Philippines",
+  "Currency Name": "Philippine Peso"
+ },
+ {
+  "Label": "PKR - Pakistan",
+  "Currency Code": "PKR",
+  "Country": "Pakistan",
+  "Currency Name": "Pakistani Rupee"
+ },
+ {
+  "Label": "PLN - Poland",
+  "Currency Code": "PLN",
+  "Country": "Poland",
+  "Currency Name": "Polish Złoty"
+ },
+ {
+  "Label": "PYG - Paraguay",
+  "Currency Code": "PYG",
+  "Country": "Paraguay",
+  "Currency Name": "Paraguayan Guaraní"
+ },
+ {
+  "Label": "QAR - Qatar",
+  "Currency Code": "QAR",
+  "Country": "Qatar",
+  "Currency Name": "Qatari Riyal"
+ },
+ {
+  "Label": "RON - Romania",
+  "Currency Code": "RON",
+  "Country": "Romania",
+  "Currency Name": "Romanian Leu"
+ },
+ {
+  "Label": "RSD - Serbia",
+  "Currency Code": "RSD",
+  "Country": "Serbia",
+  "Currency Name": "Serbian Dinar"
+ },
+ {
+  "Label": "RUB - Russia",
+  "Currency Code": "RUB",
+  "Country": "Russia",
+  "Currency Name": "Russian Ruble"
+ },
+ {
+  "Label": "RWF - Rwanda",
+  "Currency Code": "RWF",
+  "Country": "Rwanda",
+  "Currency Name": "Rwandan Franc"
+ },
+ {
+  "Label": "SAR - Saudi Arabia",
+  "Currency Code": "SAR",
+  "Country": "Saudi Arabia",
+  "Currency Name": "Saudi Riyal"
+ },
+ {
+  "Label": "SBD - Solomon Islands",
+  "Currency Code": "SBD",
+  "Country": "Solomon Islands",
+  "Currency Name": "Solomon Islands Dollar"
+ },
+ {
+  "Label": "SCR - Seychelles",
+  "Currency Code": "SCR",
+  "Country": "Seychelles",
+  "Currency Name": "Seychellois Rupee"
+ },
+ {
+  "Label": "SDG - Sudan",
+  "Currency Code": "SDG",
+  "Country": "Sudan",
+  "Currency Name": "Sudanese Pound"
+ },
+ {
+  "Label": "SEK - Sweden",
+  "Currency Code": "SEK",
+  "Country": "Sweden",
+  "Currency Name": "Swedish Krona"
+ },
+ {
+  "Label": "SGD - Singapore",
+  "Currency Code": "SGD",
+  "Country": "Singapore",
+  "Currency Name": "Singapore Dollar"
+ },
+ {
+  "Label": "SHP - Saint Helena",
+  "Currency Code": "SHP",
+  "Country": "Saint Helena",
+  "Currency Name": "Saint Helena Pound"
+ },
+ {
+  "Label": "SLE - Sierra Leone",
+  "Currency Code": "SLE",
+  "Country": "Sierra Leone",
+  "Currency Name": "Sierra Leonean Leone"
+ },
+ {
+  "Label": "SOS - Somalia",
+  "Currency Code": "SOS",
+  "Country": "Somalia",
+  "Currency Name": "Somali Shilling"
+ },
+ {
+  "Label": "SRD - Suriname",
+  "Currency Code": "SRD",
+  "Country": "Suriname",
+  "Currency Name": "Surinamese Dollar"
+ },
+ {
+  "Label": "SSP - South Sudan",
+  "Currency Code": "SSP",
+  "Country": "South Sudan",
+  "Currency Name": "South Sudanese Pound"
+ },
+ {
+  "Label": "STN - São Tomé and Príncipe",
+  "Currency Code": "STN",
+  "Country": "São Tomé and Príncipe",
+  "Currency Name": "São Tomé and Príncipe Dobra"
+ },
+ {
+  "Label": "SYP - Syria",
+  "Currency Code": "SYP",
+  "Country": "Syria",
+  "Currency Name": "Syrian Pound"
+ },
+ {
+  "Label": "SZL - Eswatini",
+  "Currency Code": "SZL",
+  "Country": "Eswatini",
+  "Currency Name": "Eswatini Lilangeni"
+ },
+ {
+  "Label": "THB - Thailand",
+  "Currency Code": "THB",
+  "Country": "Thailand",
+  "Currency Name": "Thai Baht"
+ },
+ {
+  "Label": "TJS - Tajikistan",
+  "Currency Code": "TJS",
+  "Country": "Tajikistan",
+  "Currency Name": "Tajikistani Somoni"
+ },
+ {
+  "Label": "TMT - Turkmenistan",
+  "Currency Code": "TMT",
+  "Country": "Turkmenistan",
+  "Currency Name": "Turkmenistan Manat"
+ },
+ {
+  "Label": "TND - Tunisia",
+  "Currency Code": "TND",
+  "Country": "Tunisia",
+  "Currency Name": "Tunisian Dinar"
+ },
+ {
+  "Label": "TOP - Tonga",
+  "Currency Code": "TOP",
+  "Country": "Tonga",
+  "Currency Name": "Tongan Paʻanga"
+ },
+ {
+  "Label": "TRY - Turkey",
+  "Currency Code": "TRY",
+  "Country": "Turkey",
+  "Currency Name": "Turkish Lira"
+ },
+ {
+  "Label": "TTD - Trinidad and Tobago",
+  "Currency Code": "TTD",
+  "Country": "Trinidad and Tobago",
+  "Currency Name": "Trinidad and Tobago Dollar"
+ },
+ {
+  "Label": "TVD - Tuvalu",
+  "Currency Code": "TVD",
+  "Country": "Tuvalu",
+  "Currency Name": "Tuvaluan Dollar"
+ },
+ {
+  "Label": "TWD - Taiwan",
+  "Currency Code": "TWD",
+  "Country": "Taiwan",
+  "Currency Name": "New Taiwan Dollar"
+ },
+ {
+  "Label": "TZS - Tanzania",
+  "Currency Code": "TZS",
+  "Country": "Tanzania",
+  "Currency Name": "Tanzanian Shilling"
+ },
+ {
+  "Label": "UAH - Ukraine",
+  "Currency Code": "UAH",
+  "Country": "Ukraine",
+  "Currency Name": "Ukrainian Hryvnia"
+ },
+ {
+  "Label": "UGX - Uganda",
+  "Currency Code": "UGX",
+  "Country": "Uganda",
+  "Currency Name": "Ugandan Shilling"
+ },
+ {
+  "Label": "USD - United States",
+  "Currency Code": "USD",
+  "Country": "United States",
+  "Currency Name": "United States Dollar"
+ },
+ {
+  "Label": "UYU - Uruguay",
+  "Currency Code": "UYU",
+  "Country": "Uruguay",
+  "Currency Name": "Uruguayan Peso"
+ },
+ {
+  "Label": "UZS - Uzbekistan",
+  "Currency Code": "UZS",
+  "Country": "Uzbekistan",
+  "Currency Name": "Uzbekistani So'm"
+ },
+ {
+  "Label": "VES - Venezuela",
+  "Currency Code": "VES",
+  "Country": "Venezuela",
+  "Currency Name": "Venezuelan Bolívar Soberano"
+ },
+ {
+  "Label": "VND - Vietnam",
+  "Currency Code": "VND",
+  "Country": "Vietnam",
+  "Currency Name": "Vietnamese Đồng"
+ },
+ {
+  "Label": "VUV - Vanuatu",
+  "Currency Code": "VUV",
+  "Country": "Vanuatu",
+  "Currency Name": "Vanuatu Vatu"
+ },
+ {
+  "Label": "WST - Samoa",
+  "Currency Code": "WST",
+  "Country": "Samoa",
+  "Currency Name": "Samoan Tālā"
+ },
+ {
+  "Label": "XAF - CEMAC",
+  "Currency Code": "XAF",
+  "Country": "CEMAC",
+  "Currency Name": "Central African CFA Franc"
+ },
+ {
+  "Label": "XCD - Organisation of Eastern Caribbean States",
+  "Currency Code": "XCD",
+  "Country": "Organisation of Eastern Caribbean States",
+  "Currency Name": "East Caribbean Dollar"
+ },
+ {
+  "Label": "XDR - International Monetary Fund",
+  "Currency Code": "XDR",
+  "Country": "International Monetary Fund",
+  "Currency Name": "Special Drawing Rights"
+ },
+ {
+  "Label": "XOF - CFA",
+  "Currency Code": "XOF",
+  "Country": "CFA",
+  "Currency Name": "West African CFA franc"
+ },
+ {
+  "Label": "XPF - Collectivités d'Outre-Mer",
+  "Currency Code": "XPF",
+  "Country": "Collectivités d'Outre-Mer",
+  "Currency Name": "CFP Franc"
+ },
+ {
+  "Label": "YER - Yemen",
+  "Currency Code": "YER",
+  "Country": "Yemen",
+  "Currency Name": "Yemeni Rial"
+ },
+ {
+  "Label": "ZAR - South Africa",
+  "Currency Code": "ZAR",
+  "Country": "South Africa",
+  "Currency Name": "South African Rand"
+ },
+ {
+  "Label": "ZMW - Zambia",
+  "Currency Code": "ZMW",
+  "Country": "Zambia",
+  "Currency Name": "Zambian Kwacha"
+ },
+ {
+  "Label": "ZWL - Zimbabwe",
+  "Currency Code": "ZWL",
+  "Country": "Zimbabwe",
+  "Currency Name": "Zimbabwean Dollar"
+ }
+]
