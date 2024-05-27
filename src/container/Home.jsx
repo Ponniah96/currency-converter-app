@@ -205,7 +205,11 @@ export function Home() {
           </AccordionSummary>
           <AccordionDetails>
             <Typography component="div">
-              <Link href="#" underline="hover" target="_blank">
+              <Link
+                href="https://github.com/Ponniah96/currency-converter-app"
+                underline="hover"
+                target="_blank"
+              >
                 GitHub
               </Link>
             </Typography>
