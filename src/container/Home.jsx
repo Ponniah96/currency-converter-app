@@ -39,26 +39,26 @@ export function Home() {
     const inputCountry = toAmountChanges ? toCountry : fromCountry;
     const outputCountry = toAmountChanges ? fromCountry : toCountry;
 
-    // await axios
-    //   .get(
-    //     `https://v6.exchangerate-api.com/v6/45dc38f604864f361ecc655e/pair/${inputCountry.CurrencyCode}/${outputCountry.CurrencyCode}/${amount}`
-    //   )
-    //   .then((response) => {
-    //     if (response.data.conversion_result !== undefined) {
-    //       if (toAmountChanges) {
-    //         setFromAmount(response.data.conversion_result);
-    //         setToAmountChanges(false);
-    //         setDisplayData(
-    //           `Currency Conversion of ${inputCountry.Country} ${inputCountry.CurrencyCode} ${amount} ${inputCountry.CurrencyName} into ${outputCountry.Country} ${outputCountry.CurrencyCode} is ${response.data.conversion_result} ${outputCountry.CurrencyName}`
-    //         );
-    //       } else {
-    //         setToAmount(response.data.conversion_result);
-    //         setDisplayData(
-    //           `Currency Conversion of ${inputCountry.Country} ${inputCountry.CurrencyCode} ${amount} ${inputCountry.CurrencyName} into ${outputCountry.Country} ${outputCountry.CurrencyCode} is ${response.data.conversion_result} ${outputCountry.CurrencyName}`
-    //         );
-    //       }
-    //     }
-    //   });
+    await axios
+      .get(
+        `https://v6.exchangerate-api.com/v6/45dc38f604864f361ecc655e/pair/${inputCountry.CurrencyCode}/${outputCountry.CurrencyCode}/${amount}`
+      )
+      .then((response) => {
+        if (response.data.conversion_result !== undefined) {
+          if (toAmountChanges) {
+            setFromAmount(response.data.conversion_result);
+            setToAmountChanges(false);
+            setDisplayData(
+              `Currency Conversion of ${inputCountry.Country} ${inputCountry.CurrencyCode} ${amount} ${inputCountry.CurrencyName} into ${outputCountry.Country} ${outputCountry.CurrencyCode} is ${response.data.conversion_result} ${outputCountry.CurrencyName}`
+            );
+          } else {
+            setToAmount(response.data.conversion_result);
+            setDisplayData(
+              `Currency Conversion of ${inputCountry.Country} ${inputCountry.CurrencyCode} ${amount} ${inputCountry.CurrencyName} into ${outputCountry.Country} ${outputCountry.CurrencyCode} is ${response.data.conversion_result} ${outputCountry.CurrencyName}`
+            );
+          }
+        }
+      });
   }
 
   return (
