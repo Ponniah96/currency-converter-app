@@ -176,7 +176,7 @@ export function Home() {
           )}
         </Stack>
 
-        <Accordion sx={{ m: 2 }}>
+        <Accordion defaultExpanded sx={{ m: 2 }}>
           <AccordionSummary
             expandIcon={
               loading ? (
@@ -193,14 +193,18 @@ export function Home() {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography component="div">
-              {displayData}
-              <Speech
-                text={displayData}
-                displayText="Play Audio"
-                textAsButton={true}
-              />
-            </Typography>
+            {loading ? (
+              <Skeleton width="100%" />
+            ) : (
+              <Typography component="div">
+                {displayData}
+                <Speech
+                  text={displayData}
+                  displayText="Play Audio"
+                  textAsButton={true}
+                />
+              </Typography>
+            )}
           </AccordionDetails>
         </Accordion>
 
