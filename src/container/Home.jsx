@@ -12,8 +12,10 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Skeleton,
 } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import Speech from "react-speech";
 
 export function Home() {
   const [fromAmount, setFromAmount] = useState(1);
@@ -22,6 +24,7 @@ export function Home() {
   const [toCountry, setToCountry] = useState(currencyCountries[63]);
   const [toAmountChanges, setToAmountChanges] = useState(false);
   const [displayData, setDisplayData] = useState("");
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (
       fromAmount !== undefined &&
@@ -33,7 +36,11 @@ export function Home() {
         getData();
       }
     }
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
   }, [fromAmount, toAmount, fromCountry, toCountry]);
+
   async function getData() {
     const amount = toAmountChanges ? toAmount : fromAmount;
     const inputCountry = toAmountChanges ? toCountry : fromCountry;
@@ -73,42 +80,56 @@ export function Home() {
     >
       <Paper square={false} sx={{ p: 2 }} elevation={5}>
         <Typography variant="h5" gutterBottom textAlign={"center"}>
-          Welcome to Currency Converter App
+          {loading ? (
+            <Skeleton sx={{ margin: "0 auto", width: "300px" }} />
+          ) : (
+            "Welcome to Currency Converter App"
+          )}
         </Typography>
+
         <Divider sx={{ m: 2 }} />
+
         <Stack
           direction={{ xs: "column", sm: "column", md: "row" }}
           spacing={{ xs: 1, sm: 2, md: 4 }}
           sx={{ m: 2, justifyContent: "center" }}
         >
-          <TextField
-            id="from-country"
-            label="Enter amount"
-            type="number"
-            variant="standard"
-            value={fromAmount}
-            error={fromAmount.length === 0}
-            onChange={(e) => {
-              setFromAmount(e.target.value);
-            }}
-          />
-          <Autocomplete
-            id="from-country"
-            sx={{ width: 300 }}
-            options={currencyCountries}
-            value={fromCountry}
-            onChange={(e, value) => {
-              setFromCountry(value);
-            }}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Select Country"
-                variant="standard"
-                error={fromCountry === null}
-              />
-            )}
-          />
+          {loading ? (
+            <Skeleton variant="rounded" height="50px" width="300px" />
+          ) : (
+            <TextField
+              id="from-country"
+              label="Enter amount"
+              type="number"
+              variant="standard"
+              value={fromAmount}
+              error={fromAmount.length === 0}
+              onChange={(e) => {
+                setFromAmount(e.target.value);
+              }}
+            />
+          )}
+          {loading ? (
+            <Skeleton variant="rounded" height="50px" width="300px" />
+          ) : (
+            <Autocomplete
+              id="from-country"
+              sx={{ width: 300 }}
+              options={currencyCountries}
+              value={fromCountry}
+              onChange={(e, value) => {
+                setFromCountry(value);
+              }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Select Country"
+                  variant="standard"
+                  error={fromCountry === null}
+                />
+              )}
+            />
+          )}
         </Stack>
 
         <Stack
@@ -116,57 +137,92 @@ export function Home() {
           spacing={{ xs: 1, sm: 2, md: 4 }}
           sx={{ m: 2, justifyContent: "center" }}
         >
-          <TextField
-            id="to-country"
-            label="Enter amount"
-            type="number"
-            variant="standard"
-            value={toAmount}
-            error={toAmount.length === 0}
-            onChange={(e) => {
-              setToAmountChanges(true);
-              setToAmount(e.target.value);
-            }}
-          />
-          <Autocomplete
-            id="to-country"
-            options={currencyCountries}
-            sx={{ width: 300 }}
-            value={toCountry}
-            onChange={(e, value) => {
-              setToCountry(value);
-            }}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Select Country"
-                variant="standard"
-                error={toCountry === null}
-              />
-            )}
-          />
+          {loading ? (
+            <Skeleton variant="rounded" height="50px" width="300px" />
+          ) : (
+            <TextField
+              id="to-country"
+              label="Enter amount"
+              type="number"
+              variant="standard"
+              value={toAmount}
+              error={toAmount.length === 0}
+              onChange={(e) => {
+                setToAmountChanges(true);
+                setToAmount(e.target.value);
+              }}
+            />
+          )}
+          {loading ? (
+            <Skeleton variant="rounded" height="50px" width="300px" />
+          ) : (
+            <Autocomplete
+              id="to-country"
+              options={currencyCountries}
+              sx={{ width: 300 }}
+              value={toCountry}
+              onChange={(e, value) => {
+                setToCountry(value);
+              }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Select Country"
+                  variant="standard"
+                  error={toCountry === null}
+                />
+              )}
+            />
+          )}
         </Stack>
 
         <Accordion sx={{ m: 2 }}>
           <AccordionSummary
-            expandIcon={<ArrowDownwardIcon />}
+            expandIcon={
+              loading ? (
+                <Skeleton variant="circular" width={40} height={40} />
+              ) : (
+                <ArrowDownwardIcon />
+              )
+            }
             aria-controls="requiredTechstacks"
             id="requiredTechstacks"
           >
-            <Typography>Result</Typography>
+            <Typography>
+              {loading ? <Skeleton width="250px" /> : "Result"}
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography component="div">{displayData}</Typography>
+            <Typography component="div">
+              {displayData}
+              <Speech
+                text={displayData}
+                displayText="Play Audio"
+                textAsButton={true}
+              />
+            </Typography>
           </AccordionDetails>
         </Accordion>
 
         <Accordion sx={{ m: 2 }}>
           <AccordionSummary
-            expandIcon={<ArrowDownwardIcon />}
+            expandIcon={
+              loading ? (
+                <Skeleton variant="circular" width={40} height={40} />
+              ) : (
+                <ArrowDownwardIcon />
+              )
+            }
             aria-controls="requiredTechstacks"
             id="requiredTechstacks"
           >
-            <Typography>Techstacks to build this app</Typography>
+            <Typography>
+              {loading ? (
+                <Skeleton width="250px" />
+              ) : (
+                "Techstacks to build this app"
+              )}
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography component="div">
@@ -197,11 +253,19 @@ export function Home() {
 
         <Accordion sx={{ m: 2 }}>
           <AccordionSummary
-            expandIcon={<ArrowDownwardIcon />}
+            expandIcon={
+              loading ? (
+                <Skeleton variant="circular" width={40} height={40} />
+              ) : (
+                <ArrowDownwardIcon />
+              )
+            }
             aria-controls="codebaseInfo"
             id="codebaseInfo"
           >
-            <Typography>Codebase and other info</Typography>
+            <Typography>
+              {loading ? <Skeleton width="250px" /> : "Codebase and other info"}
+            </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography component="div">
