@@ -1,0 +1,31 @@
+// Colors
+$primary-color: #282c34;
+$secondary-color: #87ceeb;
+
+//box-shadow
+$primary-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+$secondary-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+//border-radius
+$border-radius: 8px;
+$border-radius-button: 32px;
+
+//font-size
+$font-size-header: 24px;
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.primary-button {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 12px 15px;
+  border-radius: $border-radius-button;
+}

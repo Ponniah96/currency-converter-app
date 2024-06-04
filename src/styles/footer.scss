@@ -1,0 +1,8 @@
+@import "global.scss";
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-header;
+  padding: 16px;
+}

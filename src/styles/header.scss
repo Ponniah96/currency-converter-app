@@ -1,0 +1,71 @@
+@import "global.scss";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  box-shadow: $secondary-box-shadow;
+  div {
+    padding: 16px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .header-menu {
+      display: none;
+    }
+    .header-menu.active {
+      display: block;
+    }
+    &:has(.active) {
+      min-height: 100vh;
+      z-index: 10;
+    }
+  }
+
+  a {
+    color: #282c34;
+    font-weight: 600;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .header-logo {
+    background-color: $primary-color;
+    font-size: 24px;
+    position: relative;
+    a {
+      color: $secondary-color;
+      font-family: Brush Script MT, Brush Script Std, cursive;
+      display: flex;
+      span {
+        margin-left: 5px;
+      }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+      }
+    }
+
+    @keyframes App-logo-spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .header-mobile-menu-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
