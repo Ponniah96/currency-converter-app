@@ -3,7 +3,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 export function FooterLayout() {
   return (
     <div className="footer">
-      Click&nbsp;
+      Codebase&nbsp;
       <a
         href="https://github.com/Ponniah96/currency-converter-app"
         target="_blank"
@@ -11,7 +11,6 @@ export function FooterLayout() {
       >
         <GitHubIcon />
       </a>
-      &nbsp;icon to navigate gitHub codebase
     </div>
   );
 }
