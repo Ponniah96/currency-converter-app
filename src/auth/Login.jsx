@@ -28,7 +28,7 @@ export function Login({onSuccess}){
   const validateLoginForm=()=>{
     if(email.length>0 && password.length>0){
       const loginCredentials=localStorage.getItem("loginCredentials");
-      if(loginCredentials.length !==0){
+      if(loginCredentials){
         const loginCredentialData = JSON.parse(loginCredentials);
         if (email===loginCredentialData.emailId && password===loginCredentialData.password){
           onSuccess(loginCredentialData);
