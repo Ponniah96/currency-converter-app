@@ -83,7 +83,7 @@ export function CurrencyConverter() {
           {loading ? (
             <Skeleton sx={{ margin: "0 auto", width: "300px" }} />
           ) : (
-            "Welcome to Currency Converter App!!"
+            "Welcome to Currency Converter App!!!"
           )}
         </Typography>
 
