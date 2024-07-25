@@ -28,7 +28,7 @@ export function Login({onSuccess}){
   const validateLoginForm=()=>{
     if(email.length>0 && password.length>0){
       const loginCredentials=localStorage.getItem("loginCredentials");
-      if(loginCredentials){
+      if(loginCredentials !==null){
         const loginCredentialData = JSON.parse(loginCredentials);
         if (email===loginCredentialData.emailId && password===loginCredentialData.password){
           onSuccess(loginCredentialData);
@@ -42,6 +42,10 @@ export function Login({onSuccess}){
             setPasswordValidation(false)
           }
         }
+      }
+      else{
+        setEmailValidation(false)
+        setPasswordValidation(false)
       }
     }
     else{
@@ -123,6 +127,14 @@ export function Login({onSuccess}){
             </div>
           </form>
           <div className="external-authentication-methods">
+          {/* <GoogleLogin
+            onSuccess={credentialResponse => {
+              setGoogleLogin(credentialResponse);
+            }}
+            onError={() => {
+              console.log('Login Failed');
+            }}
+          /> */}
           </div>
         </div>
         :
