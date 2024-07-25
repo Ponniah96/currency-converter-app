@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-// import { googleLogout } from '@react-oauth/google';
+import { googleLogout } from '@react-oauth/google';
 import { RequiredAuth } from "../auth/RequiredAuth";
 import { Login } from "../auth/Login"
 import { Home } from "../container/Home";
@@ -18,7 +18,7 @@ export function BodyLayout({logout, loginData}) {
     if(logout){
       setLoginCredentials([]);
       loginData([]);
-      // googleLogout();
+      googleLogout();
     }
   },[logout])
 

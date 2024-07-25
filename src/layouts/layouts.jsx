@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter} from "react-router-dom";
-// import { GoogleOAuthProvider } from "@react-oauth/google";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import { HeaderLayout } from "./headerLayout";
 import { BodyLayout } from "./bodyLayout";
 import { FooterLayout } from "./footerLayout";
@@ -19,7 +19,7 @@ export default function Layout() {
     }
   }
   return (
-    // <GoogleOAuthProvider clientId={googleCredentials.clientId}>
+    <GoogleOAuthProvider clientId="485947524336-3gqngf1o0kntbre56phv49bh5facarf7.apps.googleusercontent.com">
       <BrowserRouter>
         <div className="react-projects">
           <HeaderLayout onLogout={(value)=>{getLogoutDetails(value)}} loginData={loginData}/>
@@ -27,6 +27,6 @@ export default function Layout() {
           <FooterLayout />
         </div>
       </BrowserRouter>
-    // </GoogleOAuthProvider>
+    </GoogleOAuthProvider>
   );
 }

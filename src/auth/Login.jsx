@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation} from "react-router-dom";
-// import { GoogleLogin } from "@react-oauth/google";
-// import { jwtDecode } from "jwt-decode";
+import { GoogleLogin } from "@react-oauth/google";
+import { jwtDecode } from "jwt-decode";
 import "../styles/login.scss";
 export function Login({onSuccess}){  
   const[loginForm,setLoginForm]=useState(true);
@@ -88,19 +88,19 @@ export function Login({onSuccess}){
     }
   }  
 
-  // const setGoogleLogin =(response)=>{
-  //   const googleLoginData= jwtDecode(response.credential);
-  //   const googleCredentials={
-  //     firstName:googleLoginData.given_name,
-  //     lastName:googleLoginData.family_name,
-  //     emailId:googleLoginData.email,
-  //     password:'',
-  //     profilePic:googleLoginData.picture
-  //   }
-  //   localStorage.setItem("loginCredentials",JSON.stringify(googleCredentials));
-  //   onSuccess(googleCredentials);
-  //   navigate(redirectPath);
-  // }
+  const setGoogleLogin =(response)=>{
+    const googleLoginData= jwtDecode(response.credential);
+    const googleCredentials={
+      firstName:googleLoginData.given_name,
+      lastName:googleLoginData.family_name,
+      emailId:googleLoginData.email,
+      password:'',
+      profilePic:googleLoginData.picture
+    }
+    localStorage.setItem("loginCredentials",JSON.stringify(googleCredentials));
+    onSuccess(googleCredentials);
+    navigate(redirectPath);
+  }
 
   return(
     <div className="login-page">
@@ -127,14 +127,14 @@ export function Login({onSuccess}){
             </div>
           </form>
           <div className="external-authentication-methods">
-          {/* <GoogleLogin
+          <GoogleLogin
             onSuccess={credentialResponse => {
               setGoogleLogin(credentialResponse);
             }}
             onError={() => {
               console.log('Login Failed');
             }}
-          /> */}
+          />
           </div>
         </div>
         :
