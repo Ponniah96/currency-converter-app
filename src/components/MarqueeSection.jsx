@@ -7,7 +7,7 @@ export function MarqueeSection({data}){
     <div className={`marquee-section ${data.pageName}`}>
       <div className="marquee-card-section">
         <div className="marquee-card-header">
-          {data.title}
+          {data.title} {name.firstName} {name.lastName}
         </div>
         <div className="marquee-card-subtext">
           {data.description}
