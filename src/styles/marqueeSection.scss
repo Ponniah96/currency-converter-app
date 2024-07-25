@@ -1,0 +1,31 @@
+@import "global.scss";
+
+.marquee-section{
+  width: 100%;
+  &.HomePage{
+    background: url('../data/images/react-mini-projects-homepage.jpeg') no-repeat;
+    background-size: cover;
+  }
+  &.CurrencyConverterPage{
+    background: url('../data/images/currency-converter-homepage.jpeg') no-repeat;
+    background-size: cover;
+  }
+  &.RandomPasswordGeneratorPage{
+    background: url('../data/images/random-password-generator.jpeg') no-repeat;
+    background-size: cover;
+  }
+  .marquee-card-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 350px;
+    padding: 40px;
+    margin: 40px;
+    background-color: #ffffff;
+    box-shadow: $primary-box-shadow;
+    .marquee-card-header{
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}

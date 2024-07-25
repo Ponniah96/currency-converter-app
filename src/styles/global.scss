@@ -3,8 +3,10 @@ $primary-color: #282c34;
 $secondary-color: #87ceeb;
 
 //box-shadow
-$primary-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// $primary-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+//   0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// $primary-box-shadow:0 2px 4px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.08);
+$primary-box-shadow:0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
 $secondary-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
 //border-radius
@@ -13,8 +15,9 @@ $border-radius-button: 32px;
 
 //font-size
 $font-size-header: 24px;
+$font-size-header-menu: 20px;
 
-a {
+a:not(.primary-button) {
   color: $primary-color;
   text-decoration: none;
   font-weight: bold;
@@ -25,9 +28,17 @@ a {
 
 .primary-button {
   background-color: $primary-color;
-  color: $secondary-color;
+  //color: $secondary-color;
+  color: #fff;
+  font-size: 14px;
   padding: 12px 15px;
   border-radius: $border-radius-button;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover, &:focus{
+    text-decoration: none;
+  }
+
 }
 
 .p-0 {

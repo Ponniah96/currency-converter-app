@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import reactLogo from "../data/images/react-logo.png";
 import "../styles/header.scss";
 import MenuIcon from "@mui/icons-material/Menu";
-export function HeaderLayout() {
+export function HeaderLayout({onLogout,loginData}) {
+  // const name = useLoginCredentials();
   const [mobileMenu, setMobileMenu] = useState(false);
   return (
     <div className="header">
@@ -39,6 +40,22 @@ export function HeaderLayout() {
         onClick={() => setMobileMenu(!mobileMenu)}
       >
         <Link to="/random-password-generator">Random Password generator</Link>
+      </div>
+      <div
+        className={mobileMenu ? `header-menu active` : `header-menu`}
+        onClick={() => setMobileMenu(!mobileMenu)}
+      >
+        <Link to="/open-ai-chat-generation">Open AI Generation </Link>
+      </div>
+      <div className="login-section">
+        {loginData?.firstName
+          ?
+          <button onClick={()=>{onLogout(true)}} className="login-button logout">Logout</button>
+          :
+          <Link to="/login" className="login-button">
+            Login
+          </Link>
+        }
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import "../styles/card.scss";
-import currencyConverter from "../data/images/currency-converter.png";
-import passwordGenerator from "../data/images/password-generator.png";
+import { MarqueeSection } from "../components/MarqueeSection";
+import { homePageMarqueeData } from "../data/content/marqueeData";
+import currencyConverter from "../data/images/currency-converter-homepage.jpeg";
+import passwordGenerator from "../data/images/random-password-generator.jpeg";
 
 export function Home() {
   return (
     <div className="homepage-card body-section">
+      <MarqueeSection data={homePageMarqueeData}/>
       <div className="card-section">
         <img className="card-section-image" src={currencyConverter} alt="" />
         <div className="card-section-body">

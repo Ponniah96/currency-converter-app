@@ -2,7 +2,8 @@ import { useState } from "react";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import ContentCopyTwoToneIcon from "@mui/icons-material/ContentCopyTwoTone";
 import "../styles/randomPasswordGenerator.scss";
-import { Alert } from "@mui/material";
+import { MarqueeSection } from "../components/MarqueeSection";
+import { randomPasswordGeneratorPageMarqueeData } from "../data/content/marqueeData";
 
 export function RandomPasswordGenerator() {
   const [randomPasswordGenerator, setRandomPasswordGenerator] = useState("");
@@ -51,6 +52,7 @@ export function RandomPasswordGenerator() {
 
   return (
     <div className="homepage-card body-section">
+      <MarqueeSection data={randomPasswordGeneratorPageMarqueeData}/>
       <div className="card-section">
         <div className="card-section-body">
           <div className="card-section-body-header border-bottom">

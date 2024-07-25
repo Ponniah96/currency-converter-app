@@ -16,6 +16,9 @@ import {
 } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Speech from "react-speech";
+import { MarqueeSection } from "../components/MarqueeSection";
+import { currencyConverterPageMarqueeData } from "../data/content/marqueeData";
+
 
 export function CurrencyConverter() {
   const [fromAmount, setFromAmount] = useState(1);
@@ -69,21 +72,24 @@ export function CurrencyConverter() {
   }
 
   return (
+    <div className="homepage-card body-section">
+      <MarqueeSection data={currencyConverterPageMarqueeData}/>
     <Box
-      sx={{
+    >
+      {/* sx={{
         display: "flex",
         width: "100vw",
         height: "100vh",
         alignItems: "center",
         justifyContent: "center",
-      }}
-    >
+      }} */}
+
       <Paper square={false} sx={{ p: 2 }} elevation={5}>
         <Typography variant="h5" gutterBottom textAlign={"center"}>
           {loading ? (
             <Skeleton sx={{ margin: "0 auto", width: "300px" }} />
           ) : (
-            "Welcome to Currency Converter App!!!"
+            "Welcome to Currency Converter App"
           )}
         </Typography>
 
@@ -294,6 +300,7 @@ export function CurrencyConverter() {
         </Accordion>
       </Paper>
     </Box>
+    </div>
   );
 }
 

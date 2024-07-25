@@ -1,0 +1,108 @@
+@import "global.scss";
+
+.login-page{
+  background-image: url("../data/images/test4.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+.login-container{
+  // width: clamp(300px,600px, 650px);
+  background-color:rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px transparent;
+  width: 500px;
+  @media (max-width:450px) {
+    width: 300px;    
+  }
+  &:has(.login-section) .login-container-form{
+    border-bottom: 1px solid #ffffff;
+  }
+}
+
+
+.login-container-title{
+  text-align: center;
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  input{
+    padding: 10px;
+    border: 1px solid white;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .message{
+    display: none;
+    display: block;
+    font-size: 14px;
+    color: red;
+    &.profilePic-disclaimar{
+      color: #ffffff;
+    }
+  }
+}
+
+.submit-button{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+  .signup{
+    padding: 10px 12px;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    &:hover, &:focus{
+      box-shadow:0px 0px 10px 4px rgba(250, 255, 255, 0.2);
+    }
+  }
+  .login{
+    padding: 10px 12px;
+    outline: none;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: $primary-color;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    &:hover, &:focus{
+      box-shadow:0px 0px 10px 4px rgba(250, 255, 255, 0.2);
+    }
+  }
+}
+
+.external-authentication-methods{
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}

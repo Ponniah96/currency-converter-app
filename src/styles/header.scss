@@ -8,6 +8,10 @@
   div {
     padding: 16px;
   }
+  .header-menu {
+    font-size:16px;
+    align-self: center;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -66,6 +70,28 @@
     right: 0;
     @media (min-width: 768px) {
       display: none;
+    }
+  }
+
+  .login-section{
+    position: absolute;
+    right: 40px;
+    &:has(.logout){
+      padding: 8px;
+    }
+    .login-button{
+      padding: 10px 12px;
+      font-size: 16px;
+      background-color: $primary-color;
+      color: #ffffff;
+      border-radius: 20px;
+      text-decoration: none;
+      cursor: pointer;
+      @media (max-width:768px) {
+        background-color: #ffffff;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+      }
     }
   }
 }
