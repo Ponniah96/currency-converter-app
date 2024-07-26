@@ -27,5 +27,9 @@
       font-size: 24px;
       font-weight: bold;
     }
+    @media (max-width:768px) {
+      margin: 40px 20px;
+      
+    }
   }
 }

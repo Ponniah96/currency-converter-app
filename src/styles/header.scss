@@ -5,6 +5,9 @@
   flex-direction: row;
   font-size: 20px;
   box-shadow: $secondary-box-shadow;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
   div {
     padding: 16px;
   }
