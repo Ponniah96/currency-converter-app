@@ -6,7 +6,8 @@ import { Login } from "../auth/Login"
 import { Home } from "../container/Home";
 import { CurrencyConverter } from "../container/CurrencyConverter";
 import { RandomPasswordGenerator } from "../container/RandomPasswordGenerator";
-import { OpenAIChatGeneration } from "../container/OpenAIChatGeneration";
+// import { OpenAIChatGeneration } from "../container/OpenAIChatGeneration";
+import ExcelOperations from "../container/ExcelOpertions";
 import "../styles/body.scss";
 
 const Context =createContext()
@@ -32,6 +33,7 @@ export function BodyLayout({logout, loginData}) {
       <div className="body">
         <Routes>
           <Route path="/currency-converter-app" element={<Home />}></Route>
+
           <Route
             path="/currency-converter"
             element={
@@ -48,12 +50,18 @@ export function BodyLayout({logout, loginData}) {
               </RequiredAuth>
             }
           ></Route>
-          <Route
+          {/* <Route
             path="/open-ai-chat-generation"
             element={
               <RequiredAuth>            
                 <OpenAIChatGeneration />
               </RequiredAuth>
+            }
+          ></Route> */}
+          <Route
+            path="/data-operations-without-database"
+            element={          
+                <ExcelOperations />
             }
           ></Route>
         <Route path="/login"

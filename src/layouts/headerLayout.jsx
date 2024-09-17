@@ -41,11 +41,17 @@ export function HeaderLayout({onLogout,loginData}) {
       >
         <Link to="/random-password-generator">Random Password generator</Link>
       </div>
-      <div
+      {/* <div
         className={mobileMenu ? `header-menu active` : `header-menu`}
         onClick={() => setMobileMenu(!mobileMenu)}
       >
         <Link to="/open-ai-chat-generation">Open AI Generation </Link>
+      </div> */}
+      <div
+        className={mobileMenu ? `header-menu active` : `header-menu`}
+        onClick={() => setMobileMenu(!mobileMenu)}
+      >
+        <Link to="/data-operations-without-database">Data Operations w/o DB</Link>
       </div>
       <div className="login-section">
         {loginData?.firstName
