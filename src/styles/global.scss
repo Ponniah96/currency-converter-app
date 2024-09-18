@@ -55,4 +55,20 @@ a:not(.primary-button) {
 
 .p-16 {
   padding: 16px;
+  &:has(.login-page){
+      padding: 0px;
+    }
+}
+
+.delete-button{
+  background-color: #f44336;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: $border-radius-button;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover, &:focus{
+    text-decoration: none;
+  }
 }

@@ -8,6 +8,7 @@ import { CurrencyConverter } from "../container/CurrencyConverter";
 import { RandomPasswordGenerator } from "../container/RandomPasswordGenerator";
 // import { OpenAIChatGeneration } from "../container/OpenAIChatGeneration";
 import ExcelOperations from "../container/ExcelOpertions";
+import ExcelOperationsForm from "../container/ExcelOperationsForm";
 import "../styles/body.scss";
 
 const Context =createContext()
@@ -63,7 +64,10 @@ export function BodyLayout({logout, loginData}) {
             element={          
                 <ExcelOperations />
             }
-          ></Route>
+          >
+            <Route path="new" element={<ExcelOperations />}></Route>
+            <Route path="edit" element={<ExcelOperationsForm />}></Route>
+          </Route>
         <Route path="/login"
             element={<Login onSuccess={(value)=>getLoginCredentials(value)}/>}></Route>
         </Routes>
