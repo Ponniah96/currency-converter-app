@@ -43,19 +43,21 @@ const ExcelOperations = () => {
       });
   }
 
-  async function handleDeleta(data) {
-      
-      console.log(data);
-      await axios.delete('https://script.google.com/macros/s/AKfycbzSPks2r5VmQgfXiSI5HgPdHSvHNhRy02s7U8MVlTh6VRy0Zqwy9TAGBvDw0rnL4EUKYg/exec',{
-        redirect:"follow",
-        data: JSON.stringify(data),
+  async function handleDeleta(data) { 
+      setLoadData(false);
+      await axios.post('https://script.google.com/macros/s/AKfycbwiT0LdxbTB8EM8nWulFbQ7sfZLQAXT2V7a3oLjJL4j--8I7e25S2U_cHSLukWd1ifV-g/exec',data,{
         headers: {
           'Content-Type': 'text/plain;charset=utf-8' 
+        },
+        params: {
+          _method: 'DELETE'
         }
       }).then(response => {
-          console.log(response.data); // Handle the response
+          alert(response.data.message);
+          fetchData();
         }).catch(error => {
           console.error('There was an error!', error);
+          setLoadData(true);
         });
   }
 
@@ -75,8 +77,6 @@ const ExcelOperations = () => {
   };
 
   const handleDialogConfirm = () => {
-    // Perform delete action here
-    console.log("Delete confirmed for row:", selectedRow);
     setOpenDialog(false);
     setSelectedRow(null);
     const data={
