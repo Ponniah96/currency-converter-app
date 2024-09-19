@@ -3,7 +3,7 @@ import { Link, Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import ExcelOperationsForm from './ExcelOperationsForm';
 import "../styles/excel.scss";
-import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button } from '@mui/material';
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button, Snackbar,Alert } from '@mui/material';
 const ExcelOperations = () => {
 
   const [fullData, setFullData] = useState([]);
@@ -11,6 +11,9 @@ const ExcelOperations = () => {
   const [loadData, setLoadData] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarSeverity, setSnackbarSeverity] = useState('success');
 
   useEffect(() => {   
     fetchData()
@@ -34,12 +37,17 @@ const ExcelOperations = () => {
         'Content-Type': 'text/plain;charset=utf-8' 
       }
     }).then(response => {
-        if(response.status === 200){          
-          alert(response.data.message);
+        if(response.status === 200){
+          setSnackbarMessage(response.data.message);
+          setSnackbarSeverity('error');
+          setOpenSnackbar(true);
           fetchData();
         } 
       }).catch(error => {
         console.error('There was an error!', error);
+        setSnackbarMessage('There was an error: ' + error.message);
+        setSnackbarSeverity('error');
+        setOpenSnackbar(true);
       });
   }
 
@@ -53,12 +61,52 @@ const ExcelOperations = () => {
           _method: 'DELETE'
         }
       }).then(response => {
-          alert(response.data.message);
+          setSnackbarMessage(response.data.message);
+          setSnackbarSeverity('success');
+          setOpenSnackbar(true);
           fetchData();
         }).catch(error => {
           console.error('There was an error!', error);
+          setSnackbarMessage('There was an error: ' + error.message);
+          setSnackbarSeverity('error');
+          setOpenSnackbar(true);
           setLoadData(true);
         });
+  }
+
+  async function handleUpdate(data) {
+    setLoadData(false);
+    await axios.post('https://script.google.com/macros/s/AKfycbzo3iaL8VquqQ2BuSRbblA5FmqKeivgukVyeq0Move6wMwbi4zw5IVM3o1cPs4EsggRGg/exec',data,{
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      params: {
+        _method: 'PUT'
+      }
+    }).then(response => {
+        setSnackbarMessage(response.data.message);
+        setSnackbarSeverity('success');
+        setOpenSnackbar(true);
+        fetchData();
+      }).catch(error => {
+        console.error('There was an error!', error);
+        setSnackbarMessage('There was an error: ' + error.message);
+        setSnackbarSeverity('error');
+        setOpenSnackbar(true);
+        setLoadData(true);
+      });
+  }
+
+  const handleEditData = (index,value) => {
+    console.log(index,value);
+    const data={
+      "id": index,
+      "name": value.name,
+      "designation": value.designation,
+      "role": value.role,
+      "favouriteTechstacks": value.favouriteTechstacks
+    }
+    handleUpdate(data);
   }
 
   const handleData = (data) => {
@@ -85,6 +133,13 @@ const ExcelOperations = () => {
     handleDeleta(data);
   };
 
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenSnackbar(false);
+  };
+
   return (
     <div className='p-16'>
       {!loadData
@@ -93,7 +148,9 @@ const ExcelOperations = () => {
       :
       <>
         <h4 style={{textAlign:"center", paddingBottom:'16px'}}>Welcome to Data Operations in React without DB, Server</h4>
-        <div style={{paddingBottom:'16px'}}><Link to="/data-operations-without-database/new" className="primary-button">Add New Record</Link></div>
+        <div style={{paddingBottom:'16px'}}>
+          <Link to="/data-operations-without-database/new" className="primary-button">Add New Record</Link>
+        </div>
         <div style={{overflowX:'auto'}}>
           <table className='table'>
             <thead>
@@ -116,7 +173,7 @@ const ExcelOperations = () => {
                   {headerData.map((header, index) => (
                     index === 0
                     ?
-                      <td key={index}><Link to="/data-operations-without-database/edit" style={{textDecoration:'underline'}}>{row[header]}</Link></td>
+                      <td key={index}><Link to={`/data-operations-without-database/edit/${rowIndex}`} style={{textDecoration:'underline'}}>{row[header]}</Link></td>
                     :
                     index === Object.keys(row).length-1
                     ?
@@ -136,7 +193,7 @@ const ExcelOperations = () => {
         </div>
         <Routes>
           <Route path="/new" element={<ExcelOperationsForm handleSubmitData={(value)=>handleData(value)}/>}></Route>
-          <Route path="/edit" element={<ExcelOperationsForm />}></Route>
+          <Route path="/edit/:userId" element={<ExcelOperationsForm handleEditData={(index,value)=>handleEditData(index,value)} handleInputData={fullData}/>}></Route>
         </Routes>
         <Dialog open={openDialog} onClose={handleDialogClose}>
           <DialogTitle>Confirm Delete</DialogTitle>
@@ -156,6 +213,16 @@ const ExcelOperations = () => {
         </Dialog>
       </>
       }
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        onClose={handleSnackbarClose}
+      >
+        <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: '100%' }}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };

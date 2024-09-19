@@ -1,8 +1,7 @@
-import { useState } from "react";
-// import axios from 'axios';
-import { useNavigate} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams} from "react-router-dom";
 import "../styles/login.scss";
-export default function ExcelOperationsForm({handleSubmitData}){  
+export default function ExcelOperationsForm({handleSubmitData,handleEditData,handleInputData}){  
   
   const[updateName,setupdateName]=useState("");
   const[updateDesignation,setupdateDesignation]=useState("");
@@ -12,8 +11,19 @@ export default function ExcelOperationsForm({handleSubmitData}){
   const[updateDesignationValidatiion,setupdateDesignationValidation]=useState(true);
   const[updateRoleValidatiion,setupdateRoleValidation]=useState(true);
   const[updateTechstacksValidatiion,setupdateTechstacksValidation]=useState(true);  
+  const[updateButtonEnable,setupdateButtonEnable]=useState(true);
 
   const navigate=useNavigate();
+  const{userId}=useParams();
+  
+  useEffect(()=>{
+    if(userId){
+      setupdateName(handleInputData[userId].name);
+      setupdateDesignation(handleInputData[userId].designation);
+      setupdateRole(handleInputData[userId].role);
+      setupdateTechstacks(handleInputData[userId].favouriteTechstacks);
+    }
+  },[userId,handleInputData])
 
   const validateRecords=()=>{
     if(updateName.length>0 && updateDesignation.length>0 && updateRole.length>0 &&updateTechstacks.length>0){
@@ -23,7 +33,12 @@ export default function ExcelOperationsForm({handleSubmitData}){
         role:updateRole,
         favouriteTechstacks:updateTechstacks
       }
-      handleSubmitData(updatedData);
+      if(userId){
+        handleEditData(userId,updatedData);
+      }
+      else{
+        handleSubmitData(updatedData);
+      }
       navigate(-1);
     }
     else{
@@ -42,6 +57,19 @@ export default function ExcelOperationsForm({handleSubmitData}){
     }
   }   
 
+  const enableEditButton = () => {
+    if(userId){
+      if(updateName.length>0 && updateDesignation.length>0 && updateRole.length>0 &&updateTechstacks.length>0){
+        if(updateName!==handleInputData[userId].name || updateDesignation!==handleInputData[userId].designation || updateRole!==handleInputData[userId].role || updateTechstacks!==handleInputData[userId].favouriteTechstacks){
+        setupdateButtonEnable(false);
+        }
+      }
+      else{
+        setupdateButtonEnable(true);
+      }
+    }
+  }
+
   return(
     <div className="login-page">
       <div className="login-container">
@@ -51,26 +79,31 @@ export default function ExcelOperationsForm({handleSubmitData}){
           <form className="login-container-form" onSubmit={(e)=>{e.preventDefault()}}>
             <div className="input-group">
               <label htmlFor="Name">Name</label>
-              <input type="text" placeholder="Enter Name" value={updateName} onChange={(e)=>{setupdateName(e.target.value);setupdateNameValidation(true)}}/>
+              <input type="text" placeholder="Enter Name" value={updateName} onChange={(e)=>{setupdateName(e.target.value);setupdateNameValidation(true);enableEditButton()}}/>
               {updateNameValidatiion?"": <span className="message">Enter valid name</span>}
             </div>
             <div className="input-group">
               <label htmlFor="Desgination">Designation</label>
-              <input type="text" placeholder="Enter Designation" value={updateDesignation} onChange={(e)=>{setupdateDesignation(e.target.value);setupdateDesignationValidation(true)}}/>
+              <input type="text" placeholder="Enter Designation" value={updateDesignation} onChange={(e)=>{setupdateDesignation(e.target.value);setupdateDesignationValidation(true);enableEditButton()}}/>
               {updateDesignationValidatiion?"": <span className="message">Enter valid designation</span>}
             </div>
             <div className="input-group">
               <label htmlFor="Role">Role</label>
-              <input type="text" placeholder="Enter role" value={updateRole} onChange={(e)=>{setupdateRole(e.target.value);setupdateRoleValidation(true)}}/>
+              <input type="text" placeholder="Enter role" value={updateRole} onChange={(e)=>{setupdateRole(e.target.value);setupdateRoleValidation(true);enableEditButton()}}/>
               {updateRoleValidatiion?"": <span className="message">Enter valid role</span>}
             </div>
             <div className="input-group">
               <label htmlFor="Techstacks">Favourite Techstacks</label>
-              <input type="text" placeholder="Enter techstacks" value={updateTechstacks} onChange={(e)=>{setupdateTechstacks(e.target.value);setupdateTechstacksValidation(true)}}/>
+              <input type="text" placeholder="Enter techstacks" value={updateTechstacks} onChange={(e)=>{setupdateTechstacks(e.target.value);setupdateTechstacksValidation(true);enableEditButton()}}/>
               {updateTechstacksValidatiion?"": <span className="message">Enter valid techstacks</span>}
             </div>
             <div className="submit-button">
+              {userId
+              ?
+              <input type="submit" value="Update" className="login" onClick={()=>{validateRecords()}} disabled={updateButtonEnable}/>
+              :
               <input type="submit" value="Add" className="login" onClick={()=>{validateRecords()}}/>
+              }
               <span>or</span>
               <input type="submit" value="Cancel" className="signup" onClick={(e)=>{navigate(-1)}}/>
             </div>

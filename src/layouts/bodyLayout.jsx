@@ -66,7 +66,7 @@ export function BodyLayout({logout, loginData}) {
             }
           >
             <Route path="new" element={<ExcelOperations />}></Route>
-            <Route path="edit" element={<ExcelOperationsForm />}></Route>
+            <Route path="edit/:userId" element={<ExcelOperationsForm />}></Route>
           </Route>
         <Route path="/login"
             element={<Login onSuccess={(value)=>getLoginCredentials(value)}/>}></Route>
