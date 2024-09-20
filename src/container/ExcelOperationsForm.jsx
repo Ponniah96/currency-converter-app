@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams} from "react-router-dom";
 import "../styles/login.scss";
-export default function ExcelOperationsForm({handleSubmitData,handleEditData,handleInputData}){  
+export default function ExcelOperationsForm({handleSubmitData,handleEditData,handleInputData,loginData}){  
   
   const[updateName,setupdateName]=useState("");
   const[updateDesignation,setupdateDesignation]=useState("");
@@ -97,16 +97,23 @@ export default function ExcelOperationsForm({handleSubmitData,handleEditData,han
               <input type="text" placeholder="Enter techstacks" value={updateTechstacks} onChange={(e)=>{setupdateTechstacks(e.target.value);setupdateTechstacksValidation(true);enableEditButton()}}/>
               {updateTechstacksValidatiion?"": <span className="message">Enter valid techstacks</span>}
             </div>
-            <div className="submit-button">
-              {userId
-              ?
-              <input type="submit" value="Update" className="login" onClick={()=>{validateRecords()}} disabled={updateButtonEnable}/>
+            {loginData.firstName 
+            ?
+              <div className="submit-button">
+                {userId
+                ?
+                <input type="submit" value="Update" className="login" onClick={()=>{validateRecords()}} disabled={updateButtonEnable}/>
+                :
+                <input type="submit" value="Add" className="login" onClick={()=>{validateRecords()}}/>
+                }
+                <span>or</span>
+                <input type="submit" value="Cancel" className="signup" onClick={(e)=>{navigate(-1)}}/>
+              </div>
               :
-              <input type="submit" value="Add" className="login" onClick={()=>{validateRecords()}}/>
-              }
-              <span>or</span>
-              <input type="submit" value="Cancel" className="signup" onClick={(e)=>{navigate(-1)}}/>
-            </div>
+              <div className="submit-button">
+                <input type="submit" value="Back to Dashboard" className="login" onClick={(e)=>{navigate(-1)}}/>
+              </div>
+            }
           </form>
         </div>
       </div>

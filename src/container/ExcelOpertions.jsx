@@ -1,9 +1,13 @@
 import React, {useState,useEffect} from 'react';
 import { Link, Routes, Route } from "react-router-dom";
 import axios from 'axios';
-import ExcelOperationsForm from './ExcelOperationsForm';
-import "../styles/excel.scss";
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Button, Snackbar,Alert } from '@mui/material';
+import { PieChart } from '@mui/x-charts/PieChart';
+import { BarChart } from '@mui/x-charts/BarChart';
+import ExcelOperationsForm from './ExcelOperationsForm';
+import { OpenAIChatGeneration } from './OpenAIChatGeneration';
+import { useLoginCredentials } from '../layouts/bodyLayout';
+import "../styles/excel.scss";
 const ExcelOperations = () => {
 
   const [fullData, setFullData] = useState([]);
@@ -14,6 +18,12 @@ const ExcelOperations = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('success');
+
+  const loginCredentials = useLoginCredentials();
+
+  //For Material UI Pie Chart
+  const [groupedData, setGroupedData] = useState([]);
+  const [groupLengths, setGroupLengths] = useState([]);
 
   useEffect(() => {   
     fetchData()
@@ -27,9 +37,29 @@ const ExcelOperations = () => {
           const keys = Object.keys(response.data[0]);
           setHeaderData(keys);
           setLoadData(true);
+          const groupedData = groupByTechstacks(response.data, 'favouriteTechstacks');
+          console.log(groupedData);
+          setGroupedData(groupedData);
+          const groupLengths = Object.entries(groupedData).map(([key, value]) => ({
+            label: key,
+            value: value.length
+          }));
+          console.log(groupLengths);
+          setGroupLengths(groupLengths);
         } 
       })
   }
+
+  const groupByTechstacks = (array, field) => {
+    return array.reduce((acc, obj) => {
+      const key = obj[field];
+      if (!acc[key]) {
+        acc[key] = [];
+      }
+      acc[key].push(obj);
+      return acc;
+    }, {});
+  };
 
   async function createData(data) {
     await axios.post('https://script.google.com/macros/s/AKfycbx8nyehmPE31ZRFVEM2ve7Y2M2uq5BTd8w1St0LehMkbzmDRH0kJZ6mbPYv9Z55_a8jVA/exec', data, {
@@ -148,15 +178,18 @@ const ExcelOperations = () => {
       :
       <>
         <h4 style={{textAlign:"center", paddingBottom:'16px'}}>Welcome to Data Operations in React without DB, Server</h4>
+        {loginCredentials.firstName && 
         <div style={{paddingBottom:'16px'}}>
-          <Link to="/data-operations-without-database/new" className="primary-button">Add New Record</Link>
+          <Link to="/data-operations-without-database/new" className="primary-button">Open AI Integartion</Link>
         </div>
+        }
+        {/* <Link to="/data-operations-without-database/AI" className="primary-button">Add New Record</Link> */}
         <div style={{overflowX:'auto'}}>
           <table className='table'>
             <thead>
               <tr>
                 {headerData.map((header, index) => (
-                  index === headerData.length-1
+                  index === headerData.length-1 && loginCredentials.firstName
                   ?
                     <>                      
                       <th key={index}>{header}</th>
@@ -175,7 +208,7 @@ const ExcelOperations = () => {
                     ?
                       <td key={index}><Link to={`/data-operations-without-database/edit/${rowIndex}`} style={{textDecoration:'underline'}}>{row[header]}</Link></td>
                     :
-                    index === Object.keys(row).length-1
+                    index === Object.keys(row).length-1 && loginCredentials.firstName
                     ?
                       <>                      
                         <td key={index}>{row[header]}</td>
@@ -191,28 +224,43 @@ const ExcelOperations = () => {
             </tbody>
           </table>
         </div>
-        <Routes>
-          <Route path="/new" element={<ExcelOperationsForm handleSubmitData={(value)=>handleData(value)}/>}></Route>
-          <Route path="/edit/:userId" element={<ExcelOperationsForm handleEditData={(index,value)=>handleEditData(index,value)} handleInputData={fullData}/>}></Route>
-        </Routes>
-        <Dialog open={openDialog} onClose={handleDialogClose}>
-          <DialogTitle>Confirm Delete</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              Are you sure you want to delete this row?
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleDialogClose} color="primary" variant='outlined'>
-              Cancel
-            </Button>
-            <Button onClick={handleDialogConfirm} color="error" variant='contained' autoFocus>
-              Confirm
-            </Button>
-          </DialogActions>
-        </Dialog>
+        <div className='p-16'>
+          <h4 style={{textAlign:"center", paddingBottom:'16px'}}>Welcome to Data Analysis Section</h4>
+        </div>
+        <div className='Chart-layout'>
+          <PieChart
+            series={[
+              {
+                data: groupLengths
+              },
+            ]}
+            height={200}
+          />
+          <PieChart
+            series={[
+              {
+                data: groupLengths,
+                highlightScope: { fade: 'global', highlight: 'item' },
+                faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
+              },
+            ]}
+            height={200}
+          />
+        </div>
+        <div className='p-16' style={{alignItems:"center",width:"300px",margin:"0 auto"}}>
+            <BarChart
+              xAxis={[{ scaleType: 'band', data: ['group A', 'group B', 'group C'] }]}
+              series={[{ data: [4] }, { data: [1] }, { data: [2] }]}
+              height={300}       
+            />
+        </div>
       </>
       }
+      <Routes>
+        <Route path="/new" element={<ExcelOperationsForm handleSubmitData={(value)=>handleData(value)} loginData={loginCredentials}/>}></Route>
+        <Route path="/edit/:userId" element={<ExcelOperationsForm handleEditData={(index,value)=>handleEditData(index,value)} handleInputData={fullData} loginData={loginCredentials}/>}></Route>
+        <Route path="/AI" element={<OpenAIChatGeneration />}></Route>
+      </Routes>
       <Snackbar
         open={openSnackbar}
         autoHideDuration={6000}
@@ -223,6 +271,23 @@ const ExcelOperations = () => {
           {snackbarMessage}
         </Alert>
       </Snackbar>
+      <Dialog open={openDialog} onClose={handleDialogClose}>
+        <DialogTitle>Confirm Delete</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Are you sure you want to delete this row?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDialogClose} color="primary" variant='outlined'>
+            Cancel
+          </Button>
+          <Button onClick={handleDialogConfirm} color="error" variant='contained' autoFocus>
+            Confirm
+          </Button>
+        </DialogActions>
+      </Dialog>
+     
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { Login } from "../auth/Login"
 import { Home } from "../container/Home";
 import { CurrencyConverter } from "../container/CurrencyConverter";
 import { RandomPasswordGenerator } from "../container/RandomPasswordGenerator";
-// import { OpenAIChatGeneration } from "../container/OpenAIChatGeneration";
+import { OpenAIChatGeneration } from "../container/OpenAIChatGeneration";
 import ExcelOperations from "../container/ExcelOpertions";
 import ExcelOperationsForm from "../container/ExcelOperationsForm";
 import "../styles/body.scss";
@@ -67,6 +67,7 @@ export function BodyLayout({logout, loginData}) {
           >
             <Route path="new" element={<ExcelOperations />}></Route>
             <Route path="edit/:userId" element={<ExcelOperationsForm />}></Route>
+            <Route path="AI" element={<OpenAIChatGeneration />}></Route>
           </Route>
         <Route path="/login"
             element={<Login onSuccess={(value)=>getLoginCredentials(value)}/>}></Route>
